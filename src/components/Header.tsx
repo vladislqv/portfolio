@@ -3,6 +3,7 @@ import github from "../assets/github.svg"
 import twitter from "../assets/twitter.svg"
 import linkedin from "../assets/linkedin.svg"
 import React, {RefObject} from "react";
+import arrowUp from "../assets/arrow-up-circle.svg";
 
 function Header({refs}: {
     refs: {
@@ -42,6 +43,8 @@ function Header({refs}: {
                     </a>
                 </div>
             </div>
+            <img className="fixed right-5 bottom-5 cursor-pointer" onClick={() => handleRef(refs.homeRef)} src={arrowUp} alt=""/>
+
         </>
     )
 }

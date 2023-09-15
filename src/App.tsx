@@ -2,14 +2,14 @@ import './App.css'
 import Header from "./components/Header.tsx"
 import Hero from "./components/Hero.tsx"
 import About from "./components/About.tsx";
-import {MutableRefObject, useRef} from "react";
+import {useRef} from "react";
 
 function App() {
-    const homeRef = useRef<HTMLDivElement | null>(null) as MutableRefObject<HTMLDivElement>;
-    const aboutRef = useRef<HTMLDivElement | null>(null) as MutableRefObject<HTMLDivElement>;
-    const resumeRef = useRef<HTMLDivElement | null>(null) as MutableRefObject<HTMLDivElement>;
-    const certificatesRef = useRef<HTMLDivElement | null>(null) as MutableRefObject<HTMLDivElement>;
-    const portfolioRef = useRef<HTMLDivElement | null>(null) as MutableRefObject<HTMLDivElement>;
+    const homeRef = useRef<HTMLDivElement | null>(null);
+    const aboutRef = useRef<HTMLDivElement | null>(null);
+    const resumeRef = useRef<HTMLDivElement | null>(null);
+    const certificatesRef = useRef<HTMLDivElement | null>(null);
+    const portfolioRef = useRef<HTMLDivElement | null>(null);
 
     const refs = {homeRef, aboutRef, resumeRef, certificatesRef, portfolioRef}
     return (
