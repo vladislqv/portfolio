@@ -9,7 +9,7 @@ function App() {
         <>
             <div className="flex flex-col h-screen">
                 <Header/>
-                    <Hero/>
+                <Hero/>
             </div>
             <About/>
         </>
