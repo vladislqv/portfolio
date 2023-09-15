@@ -22,7 +22,7 @@ function Header({refs}: {
         <>
             <div
                 className="flex justify-between px-7 py-1 max-h-[98px] border-b-[1.5px] border-white container mx-auto">
-                <img className="" src={logo}/>
+                <img className="" src={logo} alt="" />
                 <div className="nav-links flex items-center justify-center gap-[70px] font-main font-light">
                     <a onClick={() => {handleRef(refs.homeRef)}} className="hover:text-[#FF5D73] transition-all">Home</a>
                     <a onClick={() => {handleRef(refs.aboutRef)}} className="hover:text-[#FF5D73] transition-all">About</a>
