@@ -1,8 +1,8 @@
 import photo from "../assets/photo.png"
 
-function About() {
+function About({aboutRef}: {aboutRef: any | undefined}) {
     return (
-        <div className="bg-[#494949]">
+        <div ref={aboutRef} className="bg-[#494949]">
             <div className="container mx-auto py-10">
                 <h1 className="relative text-[64px] font-bold italic w-fit before:content-[''] before:h-[7px] before:absolute before:bg-[#fff] before:w-[100%] before:bottom-[-5px]">About
                     Me</h1>
