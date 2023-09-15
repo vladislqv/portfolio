@@ -6,7 +6,7 @@ import linkedin from "../assets/linkedin.svg"
 function Header() {
     return(
         <>
-        <div className="flex justify-between w-screen px-7 py-1 max-h-[98px] border-b-[3px] border-white">
+        <div className="flex justify-between px-7 py-1 max-h-[98px] border-b-[1.5px] border-white container mx-auto">
             <img className="" src={logo} />
             <div className="nav-links flex items-center justify-center gap-[70px] font-main font-light">
                     <a className="hover:text-[#FF5D73] transition-all">Home</a>
