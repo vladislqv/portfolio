@@ -12,10 +12,11 @@ function Hero() {
         "Web3: Bridging individuality and connectivity in the digital age"
     ]
 
+
     interface Props {
         quotes: string[];
-        typingSpeed?: number;  // speed at which characters appear, in ms
-        delayBetweenQuotes?: number;  // delay before starting the next quote or deletion, in ms
+        typingSpeed?: number;
+        delayBetweenQuotes?: number;
     }
     
     const TypingEffect = ({
