@@ -1,6 +1,7 @@
 import photo from "../assets/photo.png"
+import {RefObject} from "react";
 
-function About({aboutRef}: {aboutRef: any | undefined}) {
+function About({aboutRef}: {aboutRef: RefObject<HTMLDivElement> | undefined}) {
     return (
         <div ref={aboutRef} className="bg-[#494949]">
             <div className="container mx-auto py-10">
