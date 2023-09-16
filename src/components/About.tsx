@@ -5,7 +5,7 @@ function About({aboutRef}: {aboutRef: RefObject<HTMLDivElement> | undefined}) {
     return (
         <div ref={aboutRef} className="bg-[#494949]">
             <div className="container mx-auto py-10">
-                <h1 className="relative text-[64px] font-bold italic w-fit before:content-[''] before:h-[7px] before:absolute before:bg-[#fff] before:w-[100%] before:bottom-[-5px]">About
+                <h1 className="font-main relative text-[64px] font-bold italic w-fit before:content-[''] before:h-[7px] before:absolute before:bg-[#fff] before:w-[100%] before:bottom-[-5px]">About
                     Me</h1>
                 <div className="flex mt-20 gap-20 items-center">
                     <div className="flex flex-col gap-10 flex-[0_0_20%]">

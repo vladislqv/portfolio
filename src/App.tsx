@@ -3,6 +3,7 @@ import Header from "./components/Header.tsx"
 import Hero from "./components/Hero.tsx"
 import About from "./components/About.tsx";
 import {useRef} from "react";
+import Resume from "./components/Resume.tsx";
 
 function App() {
     const homeRef = useRef<HTMLDivElement | null>(null);
@@ -19,6 +20,7 @@ function App() {
                 <Hero/>
             </div>
             <About aboutRef={refs.aboutRef}/>
+            <Resume resumeRef={refs.resumeRef} />
         </>
     )
 }

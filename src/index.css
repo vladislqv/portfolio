@@ -5,6 +5,22 @@ body {
   background-color: #000;
 }
 
+.styled-list {
+  position: relative;
+}
+
+.styled-list::before {
+  content: '';
+  background: transparent;
+  border-radius: 9999px;
+  border: #fff solid 7px;
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+  position: absolute;
+  left: -2rem;
+}
+
 
 
 @tailwind base;
