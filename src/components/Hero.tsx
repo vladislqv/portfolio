@@ -18,6 +18,7 @@ function Hero() {
         delayBetweenQuotes?: number;
     }
 
+
     const TypingEffect = ({
                               quotes,
                               typingSpeed = 100,
@@ -53,17 +54,17 @@ function Hero() {
             return () => {
                 clearTimeout(timer);
             };
-        }, [charIndex, isDeleting, currentQuoteIndex]);
+        }, [charIndex, isDeleting, currentQuoteIndex, quotes, displayedText.length, typingSpeed, delayBetweenQuotes]);
 
-        return <div className="font-light">{displayedText}<span className="font-light">_</span></div>;
+        return <div className="font-title">{displayedText}<span className="font-light">_</span></div>;
     }
 
 
     return (
         <div
-            className="grow w-screen flex items-center justify-center text-[64px] text-center font-main px-[25%] font-500 italic">
+            className="grow flex items-center justify-center text-[64px] text-center font-main px-[25%] font-500 italic">
             <TypingEffect quotes={quotes} typingSpeed={50} delayBetweenQuotes={1000}/>
-            <img className="absolute bottom-0 animate-bounce" src={downArrow} alt="" />
+            <img className="absolute bottom-0 animate-bounce" src={downArrow} alt=""/>
         </div>
     )
 }

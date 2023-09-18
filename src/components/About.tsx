@@ -2,21 +2,23 @@ import photo from "../assets/photo.png"
 import {RefObject} from "react";
 
 function About({aboutRef}: {aboutRef: RefObject<HTMLDivElement> | undefined}) {
+
     return (
-        <div ref={aboutRef} className="bg-[#494949]">
-            <div className="container mx-auto py-10">
-                <h1 className="font-main relative text-[64px] font-bold italic w-fit before:content-[''] before:h-[7px] before:absolute before:bg-[#fff] before:w-[100%] before:bottom-[-5px]">About
+        <div ref={aboutRef} className="bg-[#000]">
+            <div className="container mx-auto pt-10 pb-20 border-t-[2px] border-white">
+                <h1 className="font-title relative text-[64px] font-bold w-fit">About
                     Me</h1>
                 <div className="flex mt-20 gap-20 items-center">
                     <div className="flex flex-col gap-10 flex-[0_0_20%]">
                         <img src={photo} alt=""/>
                         <div className="text-center">
-                            <h1 className="text-[#FF5D73] font-bold italic font-main text-[36px]">Vladislav Zavtur</h1>
-                            <h3 className="font-main font-bold italic text-[20px]">Blockchain Developer</h3>
+                            <h1 className="text-[#FF5D73] font-bold italic font-title text-[38px]">Vladislav Zavtur</h1>
+                            <h3 className="font-chakra font-medium text-[20px]">Blockchain Developer</h3>
                         </div>
                     </div>
                     <div className="">
-                        <p className="font-main font-light text-[24px]">
+                        {/*<p className="font-main font-light text-[24px]">*/}
+                        <p className="font-p font-light text-[20px]">
                             I'm Vladislav Zavtur!
                             A dedicated Blockchain Developer with a profound grasp on the intricate mechanics of the
                             Ethereum platform and the Ethereum Virtual Machine (EVM).
@@ -29,12 +31,12 @@ function About({aboutRef}: {aboutRef: RefObject<HTMLDivElement> | undefined}) {
                             and web development. I'm proficient in Javascript, Typescript, React, Python, and NodeJs,
                             and I thrive in environments that challenge me to bridge the gap between blockchain tech and
                             traditional software paradigms.
-                            <br/><br/>
-                            In every project I embark on, my goal remains consistent: to create innovative solutions
-                            that are not only technically sound but also intuitive and user-friendly. Whether it's a
-                            decentralized application, a new tokenomics model, or a bridge between blockchain and
-                            conventional systems, I'm your developer. Let's make the digital future more decentralized,
-                            together!
+                            {/*<br/><br/>*/}
+                            {/*In every project I embark on, my goal remains consistent: to create innovative solutions*/}
+                            {/*that are not only technically sound but also intuitive and user-friendly. Whether it's a*/}
+                            {/*decentralized application, a new tokenomics model, or a bridge between blockchain and*/}
+                            {/*conventional systems, I'm your developer. Let's make the digital future more decentralized,*/}
+                            {/*together!*/}
                         </p>
                     </div>
                 </div>

@@ -7,7 +7,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        main: ["Josefin Sans", "sans-serif"],
+        main: ["Red Hat Display", "sans-serif"],
+        p: ['Roboto Mono', 'monospace'],
+        title: ['Concert One', 'cursive'],
+        chakra: ['Chakra Petch', 'sans-serif']
       }
     },
   },

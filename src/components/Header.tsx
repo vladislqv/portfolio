@@ -19,12 +19,14 @@ function Header({refs}: {
             ref.current?.scrollIntoView({behavior: "smooth"})
         }
     }
+
+    // handleRef(refs.homeRef
     return (
         <>
             <div
                 className="flex justify-between px-7 py-1 max-h-[98px] border-b-[1.5px] border-white container mx-auto">
                 <img className="" src={logo} alt="" />
-                <div className="nav-links flex items-center justify-center gap-[70px] font-main font-light">
+                <div className="nav-links flex items-center justify-center gap-[70px] font-chakra font-normal">
                     <div onClick={() => {handleRef(refs.homeRef)}} className="hover:text-[#FF5D73] transition-all cursor-pointer">Home</div>
                     <div onClick={() => {handleRef(refs.aboutRef)}} className="hover:text-[#FF5D73] transition-all cursor-pointer">About</div>
                     <div onClick={() => {handleRef(refs.resumeRef)}} className="hover:text-[#FF5D73] transition-all cursor-pointer">Resume</div>
@@ -43,7 +45,7 @@ function Header({refs}: {
                     </a>
                 </div>
             </div>
-            {/*<img className="fixed right-5 bottom-5 cursor-pointer" onClick={() => handleRef(refs.homeRef)} src={arrowUp} alt=""/>*/}
+            {/*<img className="fixed right-5 bottom-5 cursor-pointer" onClick={() => window.scrollTo({top: 0, left: 0, behavior: "smooth" })} src={arrowUp} alt=""/>*/}
 
         </>
     )

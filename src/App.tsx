@@ -4,6 +4,7 @@ import Hero from "./components/Hero.tsx"
 import About from "./components/About.tsx";
 import {useRef} from "react";
 import Resume from "./components/Resume.tsx";
+import Certificates from "./components/Certificates.tsx";
 
 function App() {
     const homeRef = useRef<HTMLDivElement | null>(null);
@@ -21,6 +22,7 @@ function App() {
             </div>
             <About aboutRef={refs.aboutRef}/>
             <Resume resumeRef={refs.resumeRef} />
+            <Certificates certificatesRef={refs.certificatesRef} />
         </>
     )
 }
