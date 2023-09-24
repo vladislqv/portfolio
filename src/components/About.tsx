@@ -5,7 +5,7 @@ function About({aboutRef}: {aboutRef: RefObject<HTMLDivElement> | undefined}) {
 
     return (
         <div ref={aboutRef} className="bg-[#000]">
-            <div className="container max-[1536px]:mx-7 mx-auto pt-10 pb-20 border-t-[2px] border-white">
+            <div className="container mx-auto pt-10 pb-20 border-t-[2px] border-white">
                 <h1 className="font-title relative text-[64px] font-bold w-fit">About
                     Me</h1>
                 <div className="flex mt-20 gap-20 items-center">

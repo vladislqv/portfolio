@@ -8,7 +8,6 @@
 * {
     scrollbar-width: auto;
     scrollbar-color: #fff #000;
-    overflow-x: hidden;
 }
 
 *::-webkit-scrollbar-track {
@@ -32,7 +31,6 @@ body {
 
 .no-scroll {
     overflow: hidden;
-    position: fixed;
 }
 
 .year, .badge {

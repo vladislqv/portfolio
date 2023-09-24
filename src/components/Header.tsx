@@ -26,7 +26,6 @@ function Header({refs}: {
     const [showMenu, setShowMenu] = useState(false);
 
     useEffect(() => {
-
                 if (showMenu) {
                     document.body.classList.add('no-scroll');
                 } else {
