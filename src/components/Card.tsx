@@ -14,14 +14,14 @@ function Card({title, from, image, skills}: ICertificates) {
     };
 
     return (
-        <div className="flex flex-col border-white border-[1.5px] pb-5 rounded-lg item text-center justify-between" onMouseEnter={handleMouseEnter}
+        <div className={"flex flex-col border-white border-[1.5px] pb-5 rounded-lg item text-center justify-between transition-all"} onMouseEnter={handleMouseEnter}
              onMouseLeave={handleMouseLeave}>
             <img className={`transition-all basis-8/12 ${(hovered) ? "grayscale-0" : "grayscale"}`} src={image} alt=""/>
             <h1 className="text-[#ff5d73] font-title">{title}</h1>
             <h3 className="text-lg">{from}</h3>
             <div className="flex gap-3 flex-wrap mt-3 justify-center">
-                {skills.map((skill) => (
-                    <Badge className="badge" variant="default">{skill}</Badge>
+                {skills.map((skill, index) => (
+                    <Badge key={index} className="badge" variant="default">{skill}</Badge>
                 ))}
             </div>
         </div>

@@ -3,7 +3,7 @@ import {RefObject} from "react";
 function Resume({resumeRef}: { resumeRef: RefObject<HTMLDivElement> | undefined }) {
     return (
         <div className="bg-[#000] text-[#fff] font-chakra" ref={resumeRef}>
-            <div className="container mx-auto py-20 border-t-[2px] border-white">
+            <div className="container max-[1536px]:px-7 mx-auto py-20 border-t-[2px] border-white">
                 <h1 className="relative text-[64px] font-bold font-title w-fit">Resume</h1>
                 <div className="flex justify-around items-center mt-20">
                     <div className="education flex flex-1 flex-col gap-5 border-l-[2px] pl-3">

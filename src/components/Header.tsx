@@ -2,8 +2,11 @@ import logo from "../assets/logo.svg"
 import github from "../assets/github.svg"
 import twitter from "../assets/twitter.svg"
 import linkedin from "../assets/linkedin.svg"
-import React, {RefObject} from "react";
+import React, {RefObject, useEffect, useState} from "react";
+import menu from "../assets/menu.svg"
 // import arrowUp from "../assets/arrow-up-circle.svg";
+import MobileMenu from "@/components/MobileMenu.tsx";
+import {AnimatePresence} from "framer-motion";
 
 function Header({refs}: {
     refs: {
@@ -15,25 +18,50 @@ function Header({refs}: {
     }
 }) {
     function handleRef(ref: React.Ref<HTMLDivElement> | null) {
-        if(ref && 'current' in ref){
+        if (ref && 'current' in ref) {
             ref.current?.scrollIntoView({behavior: "smooth"})
         }
     }
 
-    // handleRef(refs.homeRef
+    const [showMenu, setShowMenu] = useState(false);
+
+    useEffect(() => {
+
+                if (showMenu) {
+                    document.body.classList.add('no-scroll');
+                } else {
+                    document.body.classList.remove('no-scroll')
+                }
+    }, [showMenu]);
+
     return (
         <>
             <div
-                className="flex justify-between px-7 py-1 max-h-[98px] border-b-[1.5px] border-white container mx-auto">
-                <img className="" src={logo} alt="" />
-                <div className="nav-links flex items-center justify-center gap-[70px] font-chakra font-normal">
-                    <div onClick={() => {handleRef(refs.homeRef)}} className="hover:text-[#FF5D73] transition-all cursor-pointer">Home</div>
-                    <div onClick={() => {handleRef(refs.aboutRef)}} className="hover:text-[#FF5D73] transition-all cursor-pointer">About</div>
-                    <div onClick={() => {handleRef(refs.resumeRef)}} className="hover:text-[#FF5D73] transition-all cursor-pointer">Resume</div>
-                    <div onClick={() => {handleRef(refs.certificatesRef)}} className="hover:text-[#FF5D73] transition-all cursor-pointer">Cetificates</div>
-                    <div onClick={() => {handleRef(refs.portfolioRef)}} className="hover:text-[#FF5D73] transition-all cursor-pointer">Portfolio</div>
+                className="flex justify-between items-center px-7 py-1 max-h-[98px] border-b-[1.5px] border-white container mx-auto">
+                <img className="" src={logo} alt="logo"/>
+                <div className="nav-links flex items-center justify-center gap-[70px] font-chakra font-normal max-[1280px]:hidden">
+                    <div onClick={() => {
+                        handleRef(refs.homeRef)
+                    }} className="hover:text-[#FF5D73] transition-all cursor-pointer">Home
+                    </div>
+                    <div onClick={() => {
+                        handleRef(refs.aboutRef)
+                    }} className="hover:text-[#FF5D73] transition-all cursor-pointer">About
+                    </div>
+                    <div onClick={() => {
+                        handleRef(refs.resumeRef)
+                    }} className="hover:text-[#FF5D73] transition-all cursor-pointer">Resume
+                    </div>
+                    <div onClick={() => {
+                        handleRef(refs.certificatesRef)
+                    }} className="hover:text-[#FF5D73] transition-all cursor-pointer">Certificates
+                    </div>
+                    <div onClick={() => {
+                        handleRef(refs.portfolioRef)
+                    }} className="hover:text-[#FF5D73] transition-all cursor-pointer">Portfolio
+                    </div>
                 </div>
-                <div className="socials flex items-center gap-[14px]">
+                <div className="socials flex items-center gap-[14px] max-[1280px]:hidden">
                     <a href="https://github.com/ycho-eth" target="blank">
                         <img src={github} alt="github"/>
                     </a>
@@ -44,9 +72,15 @@ function Header({refs}: {
                         <img src={linkedin} alt="linkedin"/>
                     </a>
                 </div>
+                <img className="w-10 h-10 hidden max-[1280px]:block cursor-pointer" onClick={() => setShowMenu(true)} src={menu} alt="MENU"/>
             </div>
-            {/*<img className="fixed right-5 bottom-5 cursor-pointer" onClick={() => window.scrollTo({top: 0, left: 0, behavior: "smooth" })} src={arrowUp} alt=""/>*/}
+            <AnimatePresence>
+                {showMenu && (
+                    <MobileMenu key="menu" setShowMenu={setShowMenu} refs={refs}/>
+                )}
+            </AnimatePresence>
 
+            {/*<img className="fixed right-5 bottom-5 cursor-pointer" onClick={() => window.scrollTo({top: 0, left: 0, behavior: "smooth" })} src={arrowUp} alt=""/>*/}
         </>
     )
 }
