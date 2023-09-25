@@ -56,7 +56,7 @@ function Hero() {
             };
         }, [charIndex, isDeleting, currentQuoteIndex, quotes, displayedText.length, typingSpeed, delayBetweenQuotes]);
 
-        return <div className="font-title">{displayedText}<span className="font-light">_</span></div>;
+        return <div className="font-title max-xl:text-5xl max-lg:text-4xl max-md:text-3xl">{displayedText}<span className="font-light">_</span></div>;
     }
 
 

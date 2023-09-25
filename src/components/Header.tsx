@@ -37,7 +37,7 @@ function Header({refs}: {
         <>
             <div
                 className="flex justify-between items-center px-7 py-1 max-h-[98px] border-b-[1.5px] border-white container mx-auto">
-                <img className="" src={logo} alt="logo"/>
+                <img className="h-20 max-xl:h-16 max-lg:h-14" src={logo} alt="logo"/>
                 <div className="nav-links flex items-center justify-center gap-[70px] font-chakra font-normal max-[1280px]:hidden">
                     <div onClick={() => {
                         handleRef(refs.homeRef)
