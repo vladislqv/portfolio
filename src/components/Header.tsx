@@ -71,7 +71,7 @@ function Header({refs}: {
                         <img src={linkedin} alt="linkedin"/>
                     </a>
                 </div>
-                <img className="w-10 h-10 hidden max-[1280px]:block cursor-pointer" onClick={() => setShowMenu(true)} src={menu} alt="MENU"/>
+                <img className="h-10 max-lg:h-9 max-md:h-8 hidden max-[1280px]:block cursor-pointer" onClick={() => setShowMenu(true)} src={menu} alt="MENU"/>
             </div>
             <AnimatePresence>
                 {showMenu && (

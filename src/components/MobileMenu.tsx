@@ -37,7 +37,7 @@ function MobileMenu({setShowMenu, refs}: {
             <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}
                         onClick={(e) => handleOverlayClick(e)}
                         className="top-0 left-0 h-[100vh] w-screen fixed z-[100000] backdrop-blur-xl flex flex-col items-center justify-center text-center">
-                <img className="absolute top-7 right-7 w-10 h-10 cursor-pointer" src={x} alt=""/>
+                <img className="absolute top-4 right-6 w-10 h-10 cursor-pointer" src={x} alt=""/>
                 <div ref={menuRef} className="flex flex-col gap-3 text-[32px] font-chakra font-bold">
                     <h1 className="text-center text-[52px] font-main font-bold mb-5 text-[#FF5D73]">Menu</h1>
                     <div className="hover:text-[#FF5D73] transition-all cursor-pointer" onClick={() => {
