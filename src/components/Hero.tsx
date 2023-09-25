@@ -62,7 +62,7 @@ function Hero() {
 
     return (
         <div
-            className="grow flex items-center justify-center text-[64px] text-center font-main px-[25%] font-500 italic">
+            className="grow flex items-center justify-center text-6xl text-center font-main px-[25%] font-500 italic">
             <TypingEffect quotes={quotes} typingSpeed={50} delayBetweenQuotes={1000}/>
             <img className="absolute bottom-0 animate-bounce" src={downArrow} alt=""/>
         </div>

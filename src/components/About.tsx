@@ -6,19 +6,18 @@ function About({aboutRef}: {aboutRef: RefObject<HTMLDivElement> | undefined}) {
     return (
         <div ref={aboutRef} className="bg-[#000]">
             <div className="container mx-auto pt-10 pb-20 border-t-[2px] border-white">
-                <h1 className="font-title relative text-[64px] font-bold w-fit">About
+                <h1 className="font-title relative text-6xl font-bold w-fit">About
                     Me</h1>
-                <div className="flex mt-20 gap-20 items-center">
+                <div className="flex mt-20 gap-20 items-center max-[1024px]:flex-col">
                     <div className="flex flex-col gap-10 flex-[0_0_20%]">
                         <img src={photo} alt=""/>
                         <div className="text-center">
-                            <h1 className="text-[#FF5D73] font-bold italic font-title text-[38px]">Vladislav Zavtur</h1>
-                            <h3 className="font-chakra font-medium text-[20px]">Blockchain Developer</h3>
+                            <h1 className="text-[#FF5D73] font-bold italic font-title text-4xl">Vladislav Zavtur</h1>
+                            <h3 className="font-chakra font-medium text-lg">Blockchain Developer</h3>
                         </div>
                     </div>
                     <div className="">
-                        {/*<p className="font-main font-light text-[24px]">*/}
-                        <p className="font-p font-light text-[20px]">
+                        <p className="font-p font-light text-base">
                             I'm Vladislav Zavtur!
                             A dedicated Blockchain Developer with a profound grasp on the intricate mechanics of the
                             Ethereum platform and the Ethereum Virtual Machine (EVM).

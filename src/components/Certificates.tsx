@@ -80,9 +80,9 @@ function Certificates({certificatesRef}: { certificatesRef: RefObject<HTMLDivEle
 
     return (
         <div ref={certificatesRef} className="bg-[#000] text-[#fff] font-chakra">
-            <div className="container max-[1536px]:px-7 mx-auto pt-10 pb-20 border-t-[2px] border-white">
-                <h1 className="relative text-[64px] font-bold font-title w-fit">Certificates & Courses</h1>
-                <div className="grid grid-cols-3 gap-4 mt-20">
+            <div className="container mx-auto pt-10 pb-20 border-t-[2px] border-white">
+                <h1 className="relative text-6xl font-bold font-title w-fit">Certificates & Courses</h1>
+                <div className="grid grid-cols-3 gap-4 mt-20 max-[1400px]:grid-cols-2 max-lg:grid-cols-1">
                     {certificates.map((certificate: ICertificates, index: number) => (
                         <Card key={index} {...certificate} />
                     ))}

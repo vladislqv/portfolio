@@ -28,7 +28,7 @@ function PortfolioItem(item: IPortfolio) {
                     )}
                 </div>
             </div>
-            <div className="flex gap-3 justify-center">
+            <div className="flex gap-3 justify-center flex-wrap">
                 {item.languages.map((item: string, index: number) => (
                     <Badge className="font-normal" key={index}>{item}</Badge>
 
