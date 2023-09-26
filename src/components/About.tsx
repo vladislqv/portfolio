@@ -10,7 +10,7 @@ function About({aboutRef}: {aboutRef: RefObject<HTMLDivElement> | undefined}) {
                     Me</h1>
                 <div className="flex mt-20 gap-20 max-lg:gap-10 items-center max-[1024px]:flex-col">
                     <div className="flex flex-col gap-10 flex-[0_0_20%]">
-                        <img className="max-lg:max-h-[50%]" src={photo} alt=""/>
+                        <img className="max-lg:max-h-[50%] profile-photo p-1" src={photo} alt=""/>
                         <div className="text-center">
                             <h1 className="text-[#FF5D73] font-bold italic font-title text-4xl max-lg:text-3xl max-md:text-2xl">Vladislav Zavtur</h1>
                             <h3 className="font-chakra font-medium text-lg max-lg:text-base max-md:text-sm">Blockchain Developer</h3>

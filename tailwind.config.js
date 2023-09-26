@@ -35,6 +35,11 @@ module.exports = {
                 p: ['Roboto Mono', 'monospace'],
                 title: ['Concert One', 'cursive'],
                 chakra: ['Chakra Petch', 'sans-serif']
+            },
+            colors: {
+                'background': '#09090b',
+                'input': '#27272a',
+                'ring': '#e5e7eb'
             }
         },
     },

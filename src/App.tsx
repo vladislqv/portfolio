@@ -6,6 +6,8 @@ import {useRef} from "react";
 import Resume from "./components/Resume.tsx";
 import Certificates from "./components/Certificates.tsx";
 import Portfolio from "@/components/Portfolio.tsx";
+import ContactMe from "@/components/ContactMe.tsx";
+import {ThemeProvider} from "@/components/theme-provider"
 
 function App() {
     const homeRef = useRef<HTMLDivElement>(null);
@@ -17,14 +19,18 @@ function App() {
     const refs = {homeRef, aboutRef, resumeRef, certificatesRef, portfolioRef}
     return (
         <>
-            <div ref={homeRef} className="flex flex-col h-screen">
-                <Header refs={refs}/>
-                <Hero/>
-            </div>
-            <About aboutRef={refs.aboutRef}/>
-            <Resume resumeRef={refs.resumeRef} />
-            <Certificates certificatesRef={refs.certificatesRef} />
-            <Portfolio portfolioRef={refs.portfolioRef} />
+            <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+                <div ref={homeRef} className="flex flex-col h-screen relative">
+                    <Header refs={refs}/>
+                    <Hero/>
+                </div>
+                <About aboutRef={refs.aboutRef}/>
+                <Resume resumeRef={refs.resumeRef}/>
+                <Certificates certificatesRef={refs.certificatesRef}/>
+                <Portfolio portfolioRef={refs.portfolioRef}/>
+                <ContactMe/>
+            </ThemeProvider>
+
         </>
     )
 }
