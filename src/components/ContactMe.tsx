@@ -18,9 +18,9 @@ function ContactMe() {
     return (
         <div className="container mx-auto pt-10 pb-20 border-t-[2px] border-white">
             <h1 className="font-title relative text-6xl max-xl:text-4xl font-bold w-fit">Contact Me</h1>
-            <div className="mt-20 flex gap-10 items-center justify-center">
-                <div className="flex flex-col gap-5">
-                    <Card>
+            <div className="mt-20 flex gap-10 items-center justify-center max-md:flex-col">
+                <div className="flex flex-col gap-5 max-md:flex-row max-md:flex-wrap">
+                    <Card className="flex-1">
                         <CardHeader>
                             <CardTitle className="flex justify-center gap-2 text-base items-center">
                                 <img className="h-[32px] w-[32px]" src={mail} alt=""/>
@@ -35,7 +35,7 @@ function ContactMe() {
                                                                        src={arrowright} alt=""/></a>
                         </CardFooter>
                     </Card>
-                    <Card>
+                    <Card className="flex-1">
                         <CardHeader>
                             <CardTitle className="flex justify-center gap-2 text-base items-center">
                                 <img className="h-[32px] w-[32px]" src={linkedin} alt=""/>
@@ -50,7 +50,7 @@ function ContactMe() {
                                                                        src={arrowright} alt=""/></a>
                         </CardFooter>
                     </Card>
-                    <Card>
+                    <Card className="flex-1">
                         <CardHeader>
                             <CardTitle className="flex justify-center gap-2 text-base items-center">
                                 <img src={twitter} alt=""/>
