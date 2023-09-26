@@ -1,11 +1,7 @@
-import {AnimatePresence, stagger, useAnimate} from "framer-motion";
 import arrowUp from "../assets/arrow-up.svg"
 import {RefObject, useEffect, useState} from "react";
 
 function ScrollUp({homeRef}: { homeRef: RefObject<HTMLDivElement> }) {
-
-    const [scope, animate] = useAnimate()
-
 
     const scrollToHome = () => {
         if (homeRef.current) {
@@ -15,11 +11,6 @@ function ScrollUp({homeRef}: { homeRef: RefObject<HTMLDivElement> }) {
 
     const [isHomeInView, setIsHomeInView] = useState(false);
 
-    useEffect(() => {
-        if (!isHomeInView) {
-            animate(scope.current, { y: [100, 0] }, { delay: stagger(0.2) })
-        }
-    }, [isHomeInView])
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -46,19 +37,14 @@ function ScrollUp({homeRef}: { homeRef: RefObject<HTMLDivElement> }) {
         };
     }, []);
 
-    // if (!isHomeInView) {
-    return (
-        <AnimatePresence>
-            {!isHomeInView &&
-                <div ref={scope} key="arrowUp"
-                     className="fixed right-5 bottom-10 cursor-pointer bg-[#0a0a0a] p-2 rounded-lg z-[49] transition-all hover:bg-[#070707]">
-                    <img src={arrowUp} alt="" onClick={scrollToHome}/>
-                </div>
-            }
-
-        </AnimatePresence>
-    )
-    // }
+    if (!isHomeInView) {
+        return (
+            <div
+                 className="fixed right-5 bottom-10 cursor-pointer bg-[#0a0a0a] p-2 rounded-lg z-[49] transition-all hover:bg-[#070707]">
+                <img src={arrowUp} alt="" onClick={scrollToHome}/>
+            </div>
+        )
+    }
 }
 
 export default ScrollUp
