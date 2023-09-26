@@ -40,7 +40,7 @@ function ScrollUp({homeRef}: { homeRef: RefObject<HTMLDivElement> }) {
     if (!isHomeInView) {
         return (
             <div
-                 className="fixed right-5 bottom-10 cursor-pointer bg-[#0a0a0a] p-2 rounded-lg z-[49] transition-all hover:bg-[#070707]">
+                 className="fixed right-5 bottom-10 cursor-pointer bg-[#0c0c0c] p-2 rounded-lg z-[49] transition-all hover:bg-[#070707]">
                 <img src={arrowUp} alt="" onClick={scrollToHome}/>
             </div>
         )
