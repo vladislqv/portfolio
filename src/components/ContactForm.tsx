@@ -8,6 +8,7 @@ import {zodResolver} from "@hookform/resolvers/zod";
 import {toast} from "@/components/ui/use-toast.ts";
 import {useState} from "react";
 import emailjs from "@emailjs/browser"
+import {Loader2} from "lucide-react";
 
 const FormSchema = z.object({
     name: z.string().min(2, {
@@ -27,13 +28,17 @@ function ContactForm() {
     // const [email, setEmail] = useState("");
     // const [message, setMessage] = useState("");
 
+    const [isLoading, setLoading] = useState(false);
+
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
     })
 
-    function onSubmit(data: z.infer<typeof FormSchema>) {
+    async function onSubmit(data: z.infer<typeof FormSchema>) {
 
-        emailjs.send(
+        setLoading(true);
+
+        await emailjs.send(
             "service_k7g0a4m",
             "template_xjjs9ab",
             data,
@@ -42,6 +47,10 @@ function ContactForm() {
             console.log(result.status)
         }).catch ((err) => {
             console.log(err)
+            toast({
+                variant: "destructive",
+                description: "error"
+            })
         })
 
         form.reset({name: "", email: "", message: ""});
@@ -55,13 +64,12 @@ function ContactForm() {
             ),
         })
 
-
-
+        setLoading(false);
     }
 
     return(
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="w-full font-chakra space-y-6">
                 <FormField
                     control={form.control}
                     name="name"
@@ -101,10 +109,14 @@ function ContactForm() {
                         </FormItem>
                     )}
                 />
-                <Button type="submit">Submit</Button>
+                <Button className="" disabled={isLoading} type="submit">{isLoading ?
+                <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Please wait
+                </> : "Submit"
+                }</Button>
             </form>
         </Form>
-
     )
 }
 
