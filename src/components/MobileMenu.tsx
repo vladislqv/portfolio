@@ -1,5 +1,5 @@
 import React, {Dispatch, RefObject, SetStateAction, useRef} from "react";
-import {AnimatePresence, motion} from "framer-motion"
+import {motion} from "framer-motion"
 import x from "../assets/x.svg"
 import github from "@/assets/github.svg";
 import twitter from "@/assets/twitter.svg";
@@ -12,7 +12,8 @@ function MobileMenu({setShowMenu, refs}: {
         aboutRef: RefObject<HTMLDivElement>,
         resumeRef: RefObject<HTMLDivElement>,
         certificatesRef: RefObject<HTMLDivElement>,
-        portfolioRef: RefObject<HTMLDivElement>
+        portfolioRef: RefObject<HTMLDivElement>,
+        contactMeRef: RefObject<HTMLDivElement>
     }
 }) {
 
@@ -59,6 +60,10 @@ function MobileMenu({setShowMenu, refs}: {
                     <div className="hover:text-[#FF5D73] transition-all cursor-pointer" onClick={() => {
                         handleRef(refs.portfolioRef)
                     }}>Portfolio
+                    </div>
+                    <div className="hover:text-[#FF5D73] transition-all cursor-pointer" onClick={() => {
+                        handleRef(refs.contactMeRef)
+                    }}>Contact Me
                     </div>
                     <div className="socials flex items-center gap-[14px] justify-center mt-10">
                         <a href="https://github.com/ycho-eth" target="blank">

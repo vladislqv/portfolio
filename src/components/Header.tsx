@@ -15,6 +15,7 @@ function Header({refs}: {
         resumeRef: RefObject<HTMLDivElement>,
         certificatesRef: RefObject<HTMLDivElement>,
         portfolioRef: RefObject<HTMLDivElement>
+        contactMeRef: RefObject<HTMLDivElement>
     }
 }) {
     function handleRef(ref: React.Ref<HTMLDivElement> | null) {
@@ -58,6 +59,10 @@ function Header({refs}: {
                     <div onClick={() => {
                         handleRef(refs.portfolioRef)
                     }} className="hover:text-[#FF5D73] transition-all cursor-pointer">Portfolio
+                    </div>
+                    <div onClick={() => {
+                        handleRef(refs.contactMeRef)
+                    }} className="hover:text-[#FF5D73] transition-all cursor-pointer">Contact Me
                     </div>
                 </div>
                 <div className="socials flex items-center gap-[14px] max-[1280px]:hidden">

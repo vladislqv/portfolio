@@ -8,6 +8,8 @@ import Certificates from "./components/Certificates.tsx";
 import Portfolio from "@/components/Portfolio.tsx";
 import ContactMe from "@/components/ContactMe.tsx";
 import {ThemeProvider} from "@/components/theme-provider"
+import Footer from "@/components/Footer.tsx";
+import ScrollUp from "@/components/ScrollUp.tsx";
 
 function App() {
     const homeRef = useRef<HTMLDivElement>(null);
@@ -15,8 +17,9 @@ function App() {
     const resumeRef = useRef<HTMLDivElement>(null);
     const certificatesRef = useRef<HTMLDivElement>(null);
     const portfolioRef = useRef<HTMLDivElement>(null);
+    const contactMeRef = useRef<HTMLDivElement>(null);
 
-    const refs = {homeRef, aboutRef, resumeRef, certificatesRef, portfolioRef}
+    const refs = {homeRef, aboutRef, resumeRef, certificatesRef, portfolioRef, contactMeRef}
     return (
         <>
             <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
@@ -28,7 +31,9 @@ function App() {
                 <Resume resumeRef={refs.resumeRef}/>
                 <Certificates certificatesRef={refs.certificatesRef}/>
                 <Portfolio portfolioRef={refs.portfolioRef}/>
-                <ContactMe/>
+                <ContactMe contactMeRef={refs.contactMeRef}/>
+                <Footer/>
+                <ScrollUp homeRef={homeRef}/>
             </ThemeProvider>
 
         </>

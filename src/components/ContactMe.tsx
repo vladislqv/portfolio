@@ -10,12 +10,13 @@ import mail from "../assets/mail.svg"
 import linkedin from "../assets/linkedin.svg"
 import twitter from "../assets/twitter.svg"
 import arrowright from "../assets/arrow-right.svg"
+import {RefObject} from "react";
 
-function ContactMe() {
+function ContactMe({contactMeRef}: { contactMeRef: RefObject<HTMLDivElement> | undefined }) {
 
 
     return (
-        <div className="container mx-auto pt-10 pb-20 border-t-[2px] border-white">
+        <div ref={contactMeRef} className="container mx-auto pt-10 pb-20 border-t-[2px] border-white">
             <h1 className="font-title relative text-6xl max-xl:text-4xl font-bold w-fit">Contact Me</h1>
             <div className="mt-20 flex gap-10 items-center justify-center max-md:flex-col">
                 <div className="flex flex-col gap-5 max-md:flex-row max-md:flex-wrap">
