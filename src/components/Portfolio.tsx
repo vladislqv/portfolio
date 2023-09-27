@@ -1,5 +1,7 @@
-import {RefObject} from "react";
+import {RefObject, useEffect} from "react";
 import PortfolioItem from "@/components/PortfolioItem.tsx";
+import { useAnimate, stagger, useInView } from "framer-motion"
+
 
 export interface IPortfolio {
     title: string,
@@ -10,6 +12,15 @@ export interface IPortfolio {
 }
 
 function Portfolio({portfolioRef}: { portfolioRef: RefObject<HTMLDivElement> | undefined }) {
+
+    const [scope, animate] = useAnimate()
+    const isInView = useInView(scope)
+
+    useEffect(() => {
+        if(isInView) {
+            animate(".portfolio-item", {opacity: [0, 1], x: [100, 0]}, {delay: stagger(0.1), duration: 0.3})
+        }
+    }, [isInView]);
     
     const portfolioItems: IPortfolio[] = [
         {
@@ -46,7 +57,7 @@ function Portfolio({portfolioRef}: { portfolioRef: RefObject<HTMLDivElement> | u
         <div className="bg-[#000] text-[#fff] font-chakra" ref={portfolioRef}>
             <div className="container mx-auto py-20 border-t-[2px] border-white">
                 <h1 className="relative text-6xl max-xl:text-4xl font-bold font-title w-fit">Portfolio</h1>
-                <div className="grid grid-cols-4 gap-4 mt-20 max-[1500px]:grid-cols-3 max-[1180px]:grid-cols-2 max-md:grid-cols-1">
+                <div ref={scope} className="grid grid-cols-4 gap-4 mt-20 max-[1500px]:grid-cols-3 max-[1180px]:grid-cols-2 max-md:grid-cols-1">
                     {portfolioItems.map((item, index) => (
                         <PortfolioItem key={index} {...item} />
                     ))}

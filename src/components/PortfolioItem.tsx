@@ -13,7 +13,7 @@ function PortfolioItem(item: IPortfolio) {
 
 
     return (
-        <div className="flex justify-between flex-col border-white border p-5 rounded-md gap-10">
+        <div className="flex portfolio-item justify-between flex-col border-white border p-5 rounded-md gap-10">
             <div className="flex justify-between">
                 <div className="flex flex-col justify-center items-center gap-3 basis-1/2">
                     <h1 className="font-bold text-lg text-[#ff5d73]">{item.title}</h1>

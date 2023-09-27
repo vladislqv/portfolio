@@ -1,14 +1,31 @@
 import photo from "../assets/photo.png"
-import {RefObject} from "react";
+import {RefObject, useEffect} from "react";
+
+import { useAnimate, useInView } from "framer-motion"
+
 
 function About({aboutRef}: {aboutRef: RefObject<HTMLDivElement> | undefined}) {
+
+    const [scope, animate] = useAnimate()
+    const isInView = useInView(scope);
+
+    useEffect( () => {
+        if (isInView) {
+            animate("h1", { y: [100, 0] }, { type: "spring" })
+            animate("h3", { y: [100, 0] }, { type: "spring" })
+            animate("p", { x: [-100, 0] }, { type: "spring" })
+            animate("img", { x: [100, 0] }, { type: "spring" })
+
+        }
+    }, [isInView])
+
 
     return (
         <div ref={aboutRef} className="bg-[#000]">
             <div className="container mx-auto pt-10 pb-20 border-t-[2px] border-white">
                 <h1 className="font-title relative text-6xl max-xl:text-4xl font-bold w-fit">About
                     Me</h1>
-                <div className="flex mt-20 gap-20 max-lg:gap-10 items-center max-[1024px]:flex-col">
+                <div ref={scope} className="flex mt-20 gap-20 max-lg:gap-10 items-center max-[1024px]:flex-col">
                     <div className="flex flex-col gap-10 flex-[0_0_20%]">
                         <img className="max-lg:max-h-[50%] profile-photo p-1" src={photo} alt=""/>
                         <div className="text-center">

@@ -1,4 +1,4 @@
-import {RefObject} from "react";
+import {RefObject, useEffect} from "react";
 import Card from "./Card.tsx";
 import alchemy from "../assets/alchemy.png"
 import learnweb3 from "../assets/learnweb3.png"
@@ -9,7 +9,6 @@ import masteringethereum from "../assets/mastering-ethereum.png"
 import fireship from "../assets/fireship.png"
 import git from "../assets/git.png"
 import next from "../assets/next.png"
-
 
 export interface ICertificates {
     title: string,
@@ -75,7 +74,6 @@ function Certificates({certificatesRef}: { certificatesRef: RefObject<HTMLDivEle
             image: next,
             skills: ["Nextjs", "React", "Postgres"]
         },
-
     ]
 
     return (
@@ -84,7 +82,7 @@ function Certificates({certificatesRef}: { certificatesRef: RefObject<HTMLDivEle
                 <h1 className="relative text-6xl max-xl:text-4xl font-bold font-title w-fit">Certificates & Courses</h1>
                 <div className="grid grid-cols-3 gap-4 mt-20 max-[1400px]:grid-cols-2 max-lg:grid-cols-1 auto-rows-fr">
                     {certificates.map((certificate: ICertificates, index: number) => (
-                        <Card key={index} {...certificate} />
+                            <Card key={index} {...certificate} />
                     ))}
                 </div>
 
