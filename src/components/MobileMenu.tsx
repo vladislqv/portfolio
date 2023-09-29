@@ -1,5 +1,5 @@
 import React, {Dispatch, RefObject, SetStateAction, useEffect, useRef} from "react";
-import {motion, stagger, useAnimate} from "framer-motion"
+import {motion} from "framer-motion"
 import x from "../assets/x.svg"
 import github from "@/assets/github.svg";
 import twitter from "@/assets/twitter.svg";
@@ -33,19 +33,13 @@ function MobileMenu({setShowMenu, refs}: {
         }
     }
 
-    const [scope, animate] = useAnimate()
-
-    useEffect(() => {
-        animate(".menu-item", {y: [100, 0], opacity: [0.5, 1]}, {delay: stagger(0.05), type: "spring", duration: 0.1})
-    }, []);
-
     return (
-            <motion.div ref={scope} initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}
+            <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}
                         onClick={(e) => handleOverlayClick(e)}
                         className="top-0 left-0 h-[100vh] w-screen fixed z-[100000] backdrop-blur-xl flex flex-col items-center justify-center text-center">
                 <img className="absolute top-4 right-6 w-10 h-10 cursor-pointer" src={x} alt=""/>
-                <div ref={menuRef} className="flex flex-col gap-3 text-[32px] font-chakra font-bold">
-                    <h1 className="text-center text-[52px] font-main font-bold mb-5 text-[#FF5D73]">Menu</h1>
+                <div ref={menuRef} className="flex flex-col gap-3 text-2xl font-chakra font-bold">
+                    <h1 className="text-center text-5xl font-main font-bold mb-5 text-[#FF5D73]">Menu</h1>
                     <div className="hover:text-[#FF5D73] menu-item transition-all cursor-pointer" onClick={() => {
                         handleRef(refs.homeRef)
                     }}>Home

@@ -44,6 +44,7 @@ function ContactForm() {
             data,
             "WneTdGKffyl2YQvZH"
         ).then((result) => {
+
             console.log(result.status)
         }).catch ((err) => {
             console.log(err)

@@ -15,7 +15,7 @@ function Card({title, from, image, skills}: ICertificates) {
     };
 
     return (
-        <div className={"flex flex-col certificates-item border-white border-[1.5px] pb-5 rounded-lg item text-center justify-between transition-all"} onMouseEnter={handleMouseEnter}
+        <div className={"flex flex-col certificates-item border-white border-[1.5px] pb-5 rounded-lg overflow-hidden item text-center justify-between transition-all"} onMouseEnter={handleMouseEnter}
              onMouseLeave={handleMouseLeave} onTouchStart={handleMouseEnter} onTouchEnd={handleMouseLeave}>
             <img className={`transition-all basis-8/12 object-cover ${(hovered) ? "grayscale-0" : "grayscale"}`} src={image} alt=""/>
             <h1 className="text-[#ff5d73] font-title text-xl max-lg:text-lg">{title}</h1>
