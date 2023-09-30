@@ -30,7 +30,16 @@ function App() {
             rootElement.style.setProperty("--y", `${clientY}px`);
         };
 
+        const updateTouchPosition = (ev: TouchEvent) => {
+            const {pageX:clientX, pageY:clientY} = ev.touches[0];
+            rootElement.style.setProperty("--x", `${clientX}px`);
+            rootElement.style.setProperty("--y", `${clientY}px`);
+        }
+
         window.addEventListener("mousemove", updateMousePosition);
+        window.addEventListener("touchstart", updateTouchPosition);
+        window.addEventListener("touchmove", updateTouchPosition);
+
 
         return () => {
             window.removeEventListener("mousemove", updateMousePosition);
