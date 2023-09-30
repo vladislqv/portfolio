@@ -40,6 +40,12 @@ function Portfolio({portfolioRef}: { portfolioRef: RefObject<HTMLDivElement> | u
             liveUrl: "https://memento-three.vercel.app/",
             languages: ["JavaScript", "React", "PWA"]
         },
+        {
+            title: "NFT Marketplace",
+            description: "Coming soon...",
+            gitHubLink: "https://github.com/ycho-eth/nft-marketplace",
+            languages: ["JavaScript", "React", "Solidity", "WalletConnect", "Wagmi", "IPFS", "ERC721", "ERC1155"]
+        },
 
     ]
 

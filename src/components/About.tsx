@@ -39,9 +39,7 @@ function About({aboutRef}: {aboutRef: RefObject<HTMLDivElement> | undefined}) {
                             A dedicated Blockchain Developer with a profound grasp on the intricate mechanics of the
                             Ethereum platform and the Ethereum Virtual Machine (EVM).
                             <br/><br/>
-                            With years of hands-on experience in the ever-evolving blockchain landscape, I specialize in
-                            leveraging tools like Hardhat, Truffle to deploy and manage smart contracts, ensuring they
-                            are efficient, secure, and integrated seamlessly with web interfaces.
+                            I have gained practical experience in the dynamic field of blockchain, mastering the use of tools like Hardhat and Truffle to deploy and manage smart contracts. I focus on ensuring these contracts are not only efficient and secure but also smoothly integrated with web interfaces.
                             <br/><br/>
                             Beyond the world of blockchain, my technical expertise extends into mainstream programming
                             and web development. I'm proficient in Javascript, Typescript, React, Python, and NodeJs,
