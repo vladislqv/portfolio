@@ -2,8 +2,8 @@
   color: #fff;
   font-size: 24px;
   /* height: 100vh; */
-  --x: 0;
-  --y: 0;
+  /*--x: 0;*/
+  /*--y: 0;*/
   background-image: radial-gradient(
           circle farthest-side at var(--x, 100px) var(--y, 100px),
           rgba(18,80,170, 0.3) 0%,
