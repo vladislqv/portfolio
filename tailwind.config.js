@@ -29,6 +29,7 @@ module.exports = {
             animation: {
                 "accordion-down": "accordion-down 0.2s ease-out",
                 "accordion-up": "accordion-up 0.2s ease-out",
+                "profile-animation": "profile__animate 8s ease-in-out infinite 1s"
             },
             fontFamily: {
                 main: ["Red Hat Display", "sans-serif"],

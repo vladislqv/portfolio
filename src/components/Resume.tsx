@@ -14,7 +14,7 @@ function Resume({resumeRef}: { resumeRef: RefObject<HTMLDivElement> | undefined 
     }, [isInView]);
 
     return (
-        <div className="bg-[#000] text-[#fff] font-chakra max-xl:text-base max-md:text-sm" ref={resumeRef}>
+        <div className="bg-[] text-[#fff] font-chakra max-xl:text-base max-md:text-sm" ref={resumeRef}>
             <div className="container mx-auto py-20 border-t-[2px] border-white">
                 <h1 className="relative text-6xl max-xl:text-4xl font-bold font-title w-fit">Resume</h1>
                 <div ref={scope} className="flex min-[1500px]:justify-around min-[1500px]:items-center mt-20 max-[1500px]:flex-col max-[1500px]:gap-5">

@@ -2,7 +2,7 @@ import './App.css'
 import Header from "./components/Header.tsx"
 import Hero from "./components/Hero.tsx"
 import About from "./components/About.tsx";
-import {useRef} from "react";
+import {useEffect, useRef} from "react";
 import Resume from "./components/Resume.tsx";
 import Certificates from "./components/Certificates.tsx";
 import Portfolio from "@/components/Portfolio.tsx";
@@ -20,6 +20,23 @@ function App() {
     const contactMeRef = useRef<HTMLDivElement>(null);
 
     const refs = {homeRef, aboutRef, resumeRef, certificatesRef, portfolioRef, contactMeRef}
+
+    const rootElement = document.getElementById("root");
+
+    useEffect(() => {
+        const updateMousePosition = (ev: MouseEvent) => {
+            const { pageX:clientX, pageY:clientY,  } = ev;
+            rootElement.style.setProperty("--x", `${clientX}px`);
+            rootElement.style.setProperty("--y", `${clientY}px`);
+        };
+
+        window.addEventListener("mousemove", updateMousePosition);
+
+        return () => {
+            window.removeEventListener("mousemove", updateMousePosition);
+        };
+    }, []);
+
     return (
         <>
             <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">

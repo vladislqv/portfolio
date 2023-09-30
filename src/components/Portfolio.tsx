@@ -44,7 +44,7 @@ function Portfolio({portfolioRef}: { portfolioRef: RefObject<HTMLDivElement> | u
     ]
 
     return (
-        <div className="bg-[#000] text-[#fff] font-chakra" ref={portfolioRef}>
+        <div className="text-[#fff] font-chakra" ref={portfolioRef}>
             <div className="container mx-auto py-20 border-t-[2px] border-white">
                 <h1 className="relative text-6xl max-xl:text-4xl font-bold font-title w-fit">Portfolio</h1>
                 <div className="grid grid-cols-4 gap-4 mt-20 max-[1500px]:grid-cols-3 max-[1180px]:grid-cols-2 max-md:grid-cols-1">
