@@ -7,7 +7,6 @@ function Card({title, from, image, skills}: ICertificates) {
 
     const handleMouseEnter = () => {
         setHovered(true);
-        console.log("Touch start")
     };
 
     const handleMouseLeave = () => {
