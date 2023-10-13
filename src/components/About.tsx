@@ -7,7 +7,7 @@ import { useAnimate, useInView } from "framer-motion"
 function About({aboutRef}: {aboutRef: RefObject<HTMLDivElement> | undefined}) {
 
     const [scope, animate] = useAnimate()
-    const isInView = useInView(scope);
+    const isInView = useInView(scope, {once: true});
 
     useEffect( () => {
         if (isInView) {
